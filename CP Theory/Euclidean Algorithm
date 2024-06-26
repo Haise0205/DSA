@@ -1,1 +1,31 @@
+Originally, the Euclidean algorithm was formulated as follows: subtract the smaller number from the larger one until one of the numbers is zero. Indeed, if g divides a and b,it also divides a-b. On the other hand, if g divides a-b and b, then it also divides a=b+(a-b) ,which means that the sets of the common divisors of {a, b} and {b,a-b} coincide.
+
+Note that a remains the larger number until b is subtracted from it at least (a/b)b times. Therefore, to speed things up,  
+we divide a by b to to get the quotient q and remainder r and do something like,
+(a,b) == (a-pb,b) but a-pb is just the remainder r.
+Hence, (a,b)==(r,b) where r is obviously smaller than b 
+
+CODE WITHOUT FUNCTION --
+
+int findGcd(int a,int b) {
+    while(a > 0 && b > 0) {
+        if(a > b) {
+            a = a % b;
+        }
+        else {
+            b = b % a; 
+        }
+    }
+    if(a == 0) {
+        return b;
+    }
+    return a;
+}
+
+CODE WITH FUNCTION ONE LINER--
+
+int gcd (int a, int b) {
+    return b ? gcd (b, a % b) : a;
+}
+
 
