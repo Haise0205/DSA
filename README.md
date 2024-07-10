@@ -6,5 +6,5 @@ Every solution/Thory/shortcut/logic will be listed in their respective folders a
 
 
 
-Author
+Author,
 Shrey Shukla
